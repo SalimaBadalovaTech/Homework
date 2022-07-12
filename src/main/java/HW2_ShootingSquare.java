@@ -14,14 +14,13 @@ public class HW2_ShootingSquare {
         Random rnd = new Random();
         int targetLine = rnd.nextInt(1, 5);
         int targetBar = rnd.nextInt(1, 5);
-        System.out.println(targetLine + " " + targetBar);
+//        System.out.println(targetLine + " " + targetBar);
 
         for (int i = 0; i < area.length; i++) {
-            for (int j = 0; j < area.length; j++) {
                 System.out.println("Please enter a line for fire!");
-                int lineFire = HW2_NumCheck.CheckNumber(i);
+                int lineFire = HW2_NumCheck.CheckNumber(i); // it worked but I didn't get how:) Need an explanation
                 System.out.println("Please enter a line for shooting bar!");
-                int shootingBar = HW2_NumCheck.CheckNumber(j);
+                int shootingBar = HW2_NumCheck.CheckNumber(i);
                 area[lineFire-1][shootingBar-1] = '*';
                 if (lineFire == targetLine && shootingBar == targetBar) {
                     System.out.println("Congrats! You won!");
@@ -41,7 +40,7 @@ public class HW2_ShootingSquare {
 
     }
 
-}
+
 
 
 
