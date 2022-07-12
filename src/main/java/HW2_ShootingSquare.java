@@ -29,7 +29,7 @@ public class HW2_ShootingSquare {
                     break;
 
                 } else {
-
+                    System.out.println("You missed the target!");
                     System.out.println(Arrays.deepToString(area).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
                 }
 
