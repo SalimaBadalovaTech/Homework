@@ -7,10 +7,10 @@ public class Main {
         System.out.println(dog.toString());
 
         Human mikeMommy = new Human();
-        mikeMommy.name = "Jane Karleone";
+        mikeMommy.setName("Jane Karleone");
 
         Human mikeDaddy = new Human();
-        mikeDaddy.name = "Vita Karleone";
+        mikeDaddy.setName("Vita Karleone");
 
         Human Mike = new Human("Michael", "Karleone", 1977, 75, mikeMommy,
                                 mikeDaddy, dog);
@@ -20,12 +20,12 @@ public class Main {
         Pet cat = new Pet("Cat","Crookshanks",5,10,new String[]{"meowing"});
 
         Human James = new Human();
-        James.name = "James";
-        James.surname = "Potter";
+        James.setName("James");
+        James.setName("Potter");
 
         Human Lily = new Human();
-        Lily.name = "Lily";
-        Lily.surname = "Potter";
+        Lily.setName("Lily");
+        Lily.setSurname("Potter");
 
         Human Harry = new Human("Harry", "Potter",1997  ,99,cat,Lily,James,
                 new String[][] {{"Monday","Expelliamus"},{"Tuesday","Beating Malfoy"}});
@@ -34,9 +34,9 @@ public class Main {
 
         Pet.eat();
         Pet.foul();
-        Pet.respond(cat.nickname);
-        Human.describePet(cat.species, cat.age);
-        Human.greetPet(cat.nickname);
+        Pet.respond(cat.getNickname());
+        Human.describePet(cat.getSpecies(), cat.getAge());
+        Human.greetPet(cat.getNickname());
     }
 
 }
