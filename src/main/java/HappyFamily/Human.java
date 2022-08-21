@@ -1,15 +1,63 @@
 package HappyFamily;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class Human {
 
     private String name;
     private String surname;
     private int year;
     private int IQ;
-    private Pet pet;
     private Human mother;
     private Human father;
     private String[][] schedule;
+
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.schedule=new String[2][];
+    }
+
+    public Human(String name, String surname, int year, int IQ, Human mother, Human father, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.IQ = IQ;
+        this.mother = mother;
+        this.father = father;
+        this.schedule = schedule;
+    }
+
+    public Human(String name, String surname, int year, Human mother, Human father) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.mother = mother;
+        this.father = father;
+        this.schedule=new String[2][];
+    }
+
+    public Human() {
+        this.schedule=new String[2][];
+    }
+
+    public Human getMother() {
+        return mother;
+    }
+
+    public void setMother(Human mother) {
+        this.mother = mother;
+    }
+
+    public Human getFather() {
+        return father;
+    }
+
+    public void setFather(Human father) {
+        this.father = father;
+    }
 
     public String getName() {
         return name;
@@ -43,30 +91,6 @@ public class Human {
         this.IQ = IQ;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }
-
     public String[][] getSchedule() {
         return schedule;
     }
@@ -76,43 +100,19 @@ public class Human {
     }
 
     public String toString() {
-        return "name: " + name + ", surname: " + surname + ", year: " + year + ", IQ: " + IQ +
-                ", mother: " + mother.name + ", father=: " + father.name + ", pet: " + pet;
+        return "Human{name='"+name+"', surname='"+surname+"', year="+year+", iq="+IQ+
+                ", schedule="+ Arrays.toString(schedule);
     }
 
-
-    public Human(String name, String surname, int date_of_birth, int IQ,
-                 Pet pet, Human mother, Human father, String[][] schedule) {
-        this.name = name;
-        this.surname = surname;
-        this.year = date_of_birth;
-        this.IQ = IQ;
-        this.pet = pet;
-        this.mother = mother;
-        this.father = father;
-        this.schedule = schedule;
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
-    public Human(String name, String surname, int date_of_birth) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
-
-    public Human(String name, String surname, int year, int IQ, Human mother, Human father, Pet pet) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.mother = mother;
-        this.father = father;
-        this.pet = pet;
-        this.IQ = IQ;
-
-    }
-
-    public Human() {
-    }
-
 
     public static String slyness(int age) {
         String slyness;
@@ -121,7 +121,6 @@ public class Human {
         else { slyness = "almost not sly";}
         return slyness;
         }
-
 
     public static void greetPet (String nickname) {
         System.out.println("Hello, " + nickname);
@@ -133,5 +132,32 @@ public class Human {
 
     }
 
+    public static void to_welcome_the_favorite(String name) {
 
+        System.out.println("Welcome, " + name);
+    }
+
+    public static void describe_the_favorite(Human human) {
+
+        System.out.println(human.toString());
+    }
+
+    public static void feed(Human human) {
+        System.out.println("I am feeding " + human.getName());
+    }
+
+    public boolean feedPet(Pet pet, boolean feed){
+        if (feed){
+            System.out.println("Hm... I will feed "+name+"'s "+ pet.getNickname());
+            return true;
+        } else {
+            int trick_number = (int)(Math.random()*100);
+            if (trick_number>pet.getTrickLevel()){
+                System.out.println("Hm... I will feed "+name+"'s"+ pet.getNickname());
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
