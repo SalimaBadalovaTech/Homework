@@ -1,11 +1,11 @@
 package Dao_HW11;
 
 import Dao.Gender;
-import Family.Family;
+import HappyFamily_HW10.Family;
 
 import java.util.List;
-import Family.Human;
-import Family.Pet;
+import HappyFamily_HW10.Human;
+import HappyFamily_HW10.Pet;
 
 public interface FamilyDao {
      List<Family> getAllFamilies();
