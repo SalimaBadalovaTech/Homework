@@ -1,11 +1,11 @@
 package Dao_Final;
 
 import Dao.Gender;
-import Family.Family;
+import Happy_Family_Final.Family;
 
 import java.util.List;
-import Family.Human;
-import Family.Pet;
+import Happy_Family_Final.Human;
+import Happy_Family_Final.Pet;
 
 public interface FamilyDao {
      List<Family> getAllFamilies();
